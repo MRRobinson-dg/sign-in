@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your New Best Friend | Find Your Perfect Dog Companion</title>
+    <style>
+        /* Classic & Friendly Styling */
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fafafa;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1100px; 
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+            color: #444;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        /* Hero Section */
+        .hero {
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: black; /* Changed text color to black */
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+            overflow: hidden;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: black; /* Changed text color to black */
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: #81d4fa;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: floating 6s ease-in-out infinite;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: #b3e5fc;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: floating 8s ease-in-out infinite reverse;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        .cta-button:hover {
+            background-color: #388e3c;
+        }
+        .dog-gallery, .process, .meet-team, .adoption-stories, .faq {
+            padding: 3rem 0;
+            text-align: center;
+            background-color: #f1f8e9;
+        }
+        /* Dog Gallery */
+        .dog-gallery img {
+            margin: 1rem;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .dog-gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Meet the Team */
+        .meet-team .team-member {
+            display: inline-block;
+            margin: 1.5rem;
+            text-align: center;
+            animation: fadeIn 1.5s ease forwards;
+        }
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        /* Adoption Stories (Carousel) */
+        .adoption-stories-carousel {
+            overflow: hidden;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .story {
+            min-width: 100%;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        /* FAQ Section */
+        .faq-item {
+            text-align: left;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .faq-item:hover {
+            background-color: #e8f5e9;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: #333;
+            color: white;
+        }
+        footer a {
+            color: lightgreen;
+            text-decoration: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .join-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.gmail {
+    background-color: #d93025;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button span {
+    position: relative;
+    z-index: 1;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.button:hover::before {
+    opacity: 1;
+    animation: wave 0.5s forwards;
+}
+
+@keyframes wave {
+    0% {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+}
+
+.footer-left h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-left p {
+  font-size: 14px;
+}
+
+.footer-center ul, .footer-right ul {
+  list-style: none;
+}
+
+.footer-center li, .footer-right li {
+  margin: 5px 0;
+}
+
+.footer-center a, .footer-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-center a:hover, .footer-right a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background-color: #222;
+  padding: 10px 0;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+    /* Dog Gallery with Slider */
+        .dog-gallery {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            margin: 1rem auto;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .dog-gallery img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transition: transform 1s ease;
+        }
+        .dog-gallery img.active {
+            left: 0;
+            transform: translateX(0);
+        }
+        .dog-gallery img.next {
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Your New Best Friend Awaits</h1>
+            <p>Browse our wonderful selection of dogs, from playful puppies to calm seniors, ready to find a new loving home.</p>
+            <a href="#" class="cta-button">Meet Our Dogs</a>
+        </div>
+    </section>
+
+    <!-- Dog Gallery Section -->
+    <section class="dog-gallery">
+        <div class="container">
+            <h2>Our Available Dogs</h2>
+            <p>Browse through our selection of wonderful dogs waiting for a new home.</p>
+            <div>
+                <img src="puppies-in-animal-shelter.jpg" alt="Dog 1" width="300">
+                <img src="dogs-behind-bars-stockcake.jpg" alt="Dog 2" width="300">
+                <img src="dogs-behind-bars-stockcake (2).jpg" alt="Dog 3" width="300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="meet-team">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-member">
+                <img src="young-woman-in-animal-shelter.jpg" alt="Team Member 1">
+                <h3>Sarah Johnson</h3>
+                <p>Adoption Specialist</p>
+            </div>
+            <div class="team-member">
+                <img src="Noblesville87.jpg" alt="Team Member 2">
+                <h3>Mike Robinson</h3>
+                <p>Veterinarian</p>
+            </div>
+            <div class="team-member">
+                <img src="Tom-Davis_001-c323db582014405aa4eb40fa28d12de0.jpg" alt="Team Member 3">
+                <h3>Emily Chen</h3>
+                <p>Trainer</p>
+            </div>
+        </div>
+    </section>
+      <div class="join-container">
+        <h1>Join Us</h1>
+        <div class="button-container">
+            <a href="facebook.html" class="button facebook">
+                <span>Join us on Facebook</span>
+            </a>
+            <a href="gmailogin.html" class="button gmail">
+                <span>Join us on Gmail</span>
+            </a>
+        </div>
+    </div>
+    <!-- Adoption Stories (Carousel) -->
+    <section class="adoption-stories">
+        <div class="container">
+            <h2>Adoption Success Stories</h2>
+            <div class="adoption-stories-carousel" id="carousel">
+                <div class="story">
+                    <p>"We adopted Bella, and she has become the joy of our lives!" - The Martins</p>
+                </div>
+                <div class="story">
+                    <p>"Charlie is so loving and playful. We can't imagine life without him!" - The Scotts</p>
+                </div>
+                <div class="story">
+                    <p>"Adopting Daisy was the best decision we made!" - The Roberts</p>
+                </div>
+                <div class="story">
+                    <p>"Luna has filled our home with love and laughter. Thank you!" - The O'Neills</p>
+                </div>
+                <div class="story">
+                    <p>"Max has been a perfect addition to our family. Our kids adore him!" - The Wongs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What is the adoption process?</h3>
+                <p>The process starts with an application, a meet-and-greet, and a home visit to ensure a good match.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are all dogs vaccinated?</h3>
+                <p>Yes, all dogs are fully vaccinated, microchipped, and have a recent health check.</div>
+            <div class="faq-item">
+                <h3>Can I return a dog if it doesn’t work out?</h3>
+                <p>We understand that sometimes situations change. We accept returns if it's not the right fit, with our team assisting in the transition.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are there adoption fees?</h3>
+                <p>Yes, adoption fees help cover medical, training, and care expenses. Fees vary by age and breed but are listed with each dog.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you provide post-adoption support?</h3>
+                <p>Yes, we offer post-adoption support, including training tips, behavioral advice, and health resources to help with the adjustment period.</p>
+            </div>
+        </div>
+    </section>
+      <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>Dog Lovers</h3>
+        <p>Your one-stop page for everything dogs!</p>
+      </div>
+      <div class="footer-center">
+        <ul>
+          <li><a href="#">Home</a></li>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Dog Lovers | All Rights Reserved</p>
+    </div>
+  </footer>
+  
+
+
+    <!-- Carousel JavaScript -->
+    <script>
+        let carousel = document.getElementById('carousel');
+        let currentIndex = 0;
+        const totalStories = carousel.children.length;
+
+        function showNextStory() {
+            currentIndex = (currentIndex + 1) % totalStories;
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Automatically switch stories every 5 seconds
+        setInterval(showNextStory, 5000);
+    </script>
+
+    <!-- FAQ Accordion JavaScript -->
+    <script>
+        // Toggle FAQ answer display on click
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('open');
+                let answer = item.querySelector('p');
+                if (item.classList.contains('open')) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = 0;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
